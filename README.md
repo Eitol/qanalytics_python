@@ -1,5 +1,10 @@
 Library to consume qanalytics API services (https://www.qanalytics.cl)
 
+Install:
+
+```bash
+pip3 install qanalytics_python
+```
 
 For example
 
@@ -11,6 +16,10 @@ To consume the service "Webservices QMGPS"
 ![](doc/params_table.png)
 
 ```python
+from datetime import datetime
+
+from qanalytics_python.qanalytics import QAnalytics
+
 qa_client = QAnalytics("WS_test", "$$WS17")
 data = {
     "ID_REG": "test",
@@ -33,6 +42,9 @@ data = {
     "TRANS": "TEST",
 }
 resp = qa_client.send_request(data, "/gps_test/service.asmx", "WM_INS_REPORTE_PUNTO_A_PUNTO")
+print(f"response code: {resp.code.name}")
+print(f"response text: {resp.text}")
+print(f"response code: {resp.http_code}")
 ```
 
 Note that for fields of type "DATETIME" you must pass an object of type "datetime.datetime" as a parameter.
