@@ -135,9 +135,7 @@ class QAnalytics(object):
         body = header + f"<soapenv:Body>\n\t<{namespace}:{method}>\n"
         template = f"\t\t\t<{namespace}:$KEY$>$VALUE$</{namespace}:$KEY$>\n"
         for key, value in data_dict.items():
-            if isinstance(value, str):
-                value_str = f'"{value}"'
-            elif isinstance(value, datetime):
+            if isinstance(value, datetime):
                 value_str = self.timezone.localize(value).isoformat()
             else:
                 value_str = str(value)

@@ -27,7 +27,7 @@ data = {
     "LONGITUD": -72.551,
     "VELOCIDAD": 0,
     "SENTIDO": 0,
-    "FH_DATO": datetime.now(),
+    "FH_DATO": datetime.strptime("2019-12-27 08:23:50", '%Y-%m-%d %H:%M:%S'),
     "PLACA": "TEST",
     "CANT_SATELITES": 1,
     "HDOP": 1,
