@@ -13,7 +13,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="qanalytics_python",
-    version="1.0.0",
+    version="1.0.1",
     description="Library to consume qanalytics API services (https://www.qanalytics.cl)",
     long_description=README,
     long_description_content_type="text/markdown",
